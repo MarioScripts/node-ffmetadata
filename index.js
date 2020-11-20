@@ -1,8 +1,9 @@
 /* jshint node:true */
 "use strict";
 
+var pathToFfmpeg = require('ffmpeg-static-electron');
 var spawn = require("child_process").spawn,
-	ffmpeg = spawn.bind(null, process.env.FFMPEG_PATH || "ffmpeg"),
+	ffmpeg = spawn.bind(null, pathToFfmpeg.path || "ffmpeg"),
 	fs = require("fs"),
 	through = require("through"),
 	concat = require("concat-stream");
